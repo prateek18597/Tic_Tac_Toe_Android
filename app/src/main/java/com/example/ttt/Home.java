@@ -21,7 +21,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void singlePlayer(View view){
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,SinglePlayer.class);
         startActivity(intent);
     }
 

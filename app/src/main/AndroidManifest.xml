@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/tictactoe_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home"
+        <activity
+            android:name=".Home"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +20,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Home">
-        </activity>
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SinglePlayer"
+            android:parentActivityName=".Home"
+            android:screenOrientation="portrait"></activity>[
     </application>
 
 </manifest>
