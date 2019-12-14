@@ -2,10 +2,13 @@ package com.example.ttt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void goBack(View view){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
     void fillA(){
         for(int i = 0; i < 9; i++){
             A[i]=2;
@@ -69,14 +77,23 @@ public class MainActivity extends AppCompatActivity {
                 ;
         if(x) {
             tv.setText("X wins");
+            Toast t = Toast.makeText(getApplicationContext(),"X Wins",Toast.LENGTH_LONG);//.setGravity(Gravity.TOP,0,0);
+            t.setGravity(Gravity.TOP,0,0);
+            t.show();
             fillA();
         }
         if(o) {
             tv.setText("O wins");
+            Toast t = Toast.makeText(getApplicationContext(),"O Wins",Toast.LENGTH_LONG);//.setGravity(Gravity.TOP,0,0);
+            t.setGravity(Gravity.BOTTOM,0,0);
+            t.show();
             fillA();
         }
         if(!x && !o && left==0) {
             tv.setText("Draw");
+            Toast t = Toast.makeText(getApplicationContext(),"Draw",Toast.LENGTH_LONG);//.setGravity(Gravity.TOP,0,0);
+            t.setGravity(Gravity.CENTER,0,0);
+            t.show();
         }
         return 0;
     }
