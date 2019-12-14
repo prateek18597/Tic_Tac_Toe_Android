@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/p1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_marginTop="20dp"
+            >
+
+            <TextView
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="Tic Tac Toe"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="42dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:onClick="button1" />
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="100dp"
+                android:onClick="button2"/>
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:onClick="button3"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+            <Button
+                android:id="@+id/btn4"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:onClick="button4"/>
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="100dp"
+                android:onClick="button5"/>
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:onClick="button6"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10">
+            <Button
+                android:id="@+id/btn7"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:onClick="button7"/>
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="100dp"
+                android:onClick="button8"/>
+            <Button
+                android:id="@+id/btn9"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:onClick="button9"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:id="@+id/resultTV"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="32dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="10"
+            android:layout_marginTop="30dp">
+            <Button
+                android:id="@+id/resetBtn"
+                android:layout_weight="5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="RESET"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:onClick="reset"/>
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
