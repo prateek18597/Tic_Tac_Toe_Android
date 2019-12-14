@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
     Boolean turn = false;//false represents X
     int[] A = new int[9];//value 0 equal X
+    int left = 9;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,42 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    void fillA(){
+        for(int i = 0; i < 9; i++){
+            A[i]=2;
+        }
+    }
     int checkWinner(){
+        //X Winner
+        Boolean x = (A[0]==0 && A[1]==0 && A[2]==0) ||
+                    (A[0]==0 && A[3]==0 && A[6]==0) ||
+                    (A[0]==0 && A[4]==0 && A[8]==0) ||
+                    (A[1]==0 && A[4]==0 && A[7]==0) ||
+                    (A[2]==0 && A[5]==0 && A[8]==0) ||
+                    (A[3]==0 && A[4]==0 && A[5]==0) ||
+                    (A[2]==0 && A[4]==0 && A[6]==0) ||
+                    (A[6]==0 && A[7]==0 && A[8]==0)
+                ;
+        Boolean o = (A[0]==1 && A[1]==1 && A[2]==1) ||
+                (A[0]==1 && A[3]==1 && A[6]==1) ||
+                (A[0]==1 && A[4]==1 && A[8]==1) ||
+                (A[1]==1 && A[4]==1 && A[7]==1) ||
+                (A[2]==1 && A[5]==1 && A[8]==1) ||
+                (A[3]==1 && A[4]==1 && A[5]==1) ||
+                (A[2]==1 && A[4]==1 && A[6]==1) ||
+                (A[6]==1 && A[7]==1 && A[8]==1)
+                ;
+        if(x) {
+            tv.setText("X wins");
+            fillA();
+        }
+        if(o) {
+            tv.setText("O wins");
+            fillA();
+        }
+        if(!x && !o && left==0) {
+            tv.setText("Draw");
+        }
         return 0;
     }
 
@@ -54,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 A[0]=0;
                 btn[0].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -68,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 A[1]=0;
                 btn[1].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -82,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 A[2]=0;
                 btn[2].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -96,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 A[3]=0;
                 btn[3].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -110,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 A[4]=0;
                 btn[4].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -124,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 A[5]=0;
                 btn[5].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -138,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 A[6]=0;
                 btn[6].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -153,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 A[7]=0;
                 btn[7].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -167,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 A[8]=0;
                 btn[8].setText("X");
             }
+            left--;
             turn=!turn;
             checkWinner();
         }
@@ -175,8 +220,10 @@ public class MainActivity extends AppCompatActivity {
     public void reset(View view){
         for(int i = 0; i < 9;i++){
             btn[i].setText("");
-            turn=false;
             A[i]=-1;
         }
+        left=9;
+        turn=false;
+        tv.setText("");
     }
 }
