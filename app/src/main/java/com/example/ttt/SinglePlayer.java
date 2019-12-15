@@ -85,15 +85,18 @@ public class SinglePlayer extends AppCompatActivity {
         if(x) {
             tv.setText("X wins");
             fillA();
+            return 0;
         }
         if(o) {
             tv.setText("O wins");
             fillA();
+            return 1;
         }
         if(!x && !o && left==0) {
             tv.setText("Draw");
+            return 2;
         }
-        return 0;
+        return -1;
     }
 
     public void compTurn() {
@@ -114,8 +117,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[0].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -126,8 +130,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[1].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -138,8 +143,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[2].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -150,8 +156,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[3].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -162,8 +169,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[4].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -174,8 +182,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[5].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -186,8 +195,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[6].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
 
     }
@@ -199,8 +209,9 @@ public class SinglePlayer extends AppCompatActivity {
             A[7]=1;
             btn[7].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
@@ -211,8 +222,9 @@ public class SinglePlayer extends AppCompatActivity {
             list.remove(i);
             btn[8].setText("O");
             left--;
-            checkWinner();
-            compTurn();
+            int k = checkWinner();
+            if(k==-1)
+                compTurn();
         }
     }
 
